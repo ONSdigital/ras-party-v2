@@ -88,8 +88,6 @@ class Config(object):
     OAUTH_SERVICE_HOST = os.getenv('OAUTH_SERVICE_HOST', 'localhost')
     OAUTH_SERVICE_PORT = os.getenv('OAUTH_SERVICE_PORT', 8041)
     OAUTH_SERVICE = f'{OAUTH_SERVICE_PROTOCOL}://{OAUTH_SERVICE_HOST}:{OAUTH_SERVICE_PORT}'
-    OAUTH_CLIENT_ID = os.getenv('OAUTH_CLIENT_ID', 'ons@ons.gov')
-    OAUTH_CLIENT_SECRET = os.getenv('OAUTH_CLIENT_SECRET', 'password')
 
     DEPENDENCIES = [
         'ras-party-db',
@@ -131,8 +129,6 @@ class TestingConfig(DevelopmentConfig):
     COLLECTION_EXERCISE_SERVICE = 'http://mockhost:2222'
     SURVEY_SERVICE = 'http://mockhost:3333'
     OAUTH_SERVICE = 'http://mockhost:4444'
-    OAUTH_CLIENT_ID = 'ons@ons.gov'
-    OAUTH_CLIENT_SECRET = 'password'
     NOTIFY_SERVICE_URL = 'http://mockhost:5555/emails/'
     NOTIFY_EMAIL_VERIFICATION_TEMPLATE = 'email_verification_id'
     NOTIFY_REQUEST_PASSWORD_CHANGE_TEMPLATE = 'request_password_change_id'

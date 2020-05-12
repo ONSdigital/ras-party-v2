@@ -146,16 +146,6 @@ spec:
             {{- else }}
             value: "postgresql://$(DB_USERNAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
             {{- end }}
-          - name: OAUTH_CLIENT_ID
-            valueFrom:
-              secretKeyRef:
-                name: oauth-secret
-                key: oauth-client-id
-          - name: OAUTH_CLIENT_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: oauth-secret
-                key: oauth-client-secret
           - name: NOTIFY_SERVICE_HOST
             {{- if .Values.dns.enabled }}
             value: "notify-gateway.{{ .Values.namespace }}.svc.cluster.local"
